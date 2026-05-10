@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>krishnan's portfolio</title>
+    <style>
+        /* --- General Page Styling --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #fcfcfc;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- Container for the Text Block --- */
+        .typing-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the two lines relative to each other */
+        }
+
+        /* The wrapper fixes the width so the typing animation starts from the correct spot */
+        .line-wrapper {
+            width: max-content;
+        }
+
+        /* --- Base Styling for Both Lines --- */
+        .line {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #333;
+            margin: 0;
+            padding-bottom: 5px;
+            
+            /* Crucial for typing effect */
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid transparent; 
+            width: 0; 
+        }
+
+        /* --- Line 1 Specifics --- */
+        .line1 {
+            /* 1.5s typing + 2s pause = 3.5s total duration. */
+            animation: 
+                typing 1.5s steps(18, end) forwards,
+                blink-cursor 0.7s step-end 5 forwards;
+        }
+
+        /* --- Line 2 Specifics --- */
+        .line2 {
+            /* Waits exactly 3.5s before starting */
+            animation: 
+                typing 1.5s steps(20, end) 3.5s forwards,
+                blink-cursor 0.7s step-end 3.5s infinite;
+        }
+
+        /* --- Responsive Design (Small Screens) --- */
+        @media (max-width: 600px) {
+            .line {
+                font-size: 1.5rem;
+                border-right-width: 2px;
+            }
+        }
+
+        /* --- Animation Keyframes --- */
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-cursor {
+            0%, 100% { border-color: transparent; }
+            50% { border-color: #333; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="typing-container">
+        
+        <div class="line-wrapper">
+            <p class="line line1">hi. i am krishnan.</p>
+        </div>
+        
+        <div class="line-wrapper">
+            <p class="line line2">thanks for visiting.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
